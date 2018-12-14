@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+          * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <!-- Solo iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- Tema MD -->
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Cordova F7 Plantilla V.3</title>
+
+  <link rel="stylesheet" href="framework7/css/framework7.min.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- DIV root #app-->
+  <div id="app">
+
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+
+    <!-- Panel izquierdo con efecto cover -->
+    <div class="panel panel-left panel-cover theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Panel Izquierdo</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">Contenido del panel izquierdo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel derecho con efecto reveal -->
+    <div class="panel panel-right panel-reveal theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Panel Derecho</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">Contenido del panel derecho</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista Layout Principal, con class "view-main"-->
+    <div class="view view-main ios-edges">
+
+      <!-- Page, data-name contiene el nombre de la pagina para reemplazar en la navegación-->
+      <div class="page" data-name="inicio">
+
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <!-- Abrir Panel Izquierdo -->
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
+            </div>
+
+            <div class="title sliding">Plantilla F7 V3</div>
+            
+            <div class="right">
+              <!-- Abrir Panel Derecho -->
+              <a href="#" class="link icon-only panel-open" data-panel="right">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            <a href="#" class="link">Link Izquierda</a>
+            <a href="#" class="link">Link Derecha</a>
+          </div>
+        </div>
+
+        <!-- Scrollable page content-->
+        <div class="page-content">
+
+          <div class="block block-strong">
+            <p>Aquí puedes poner el contenido de la app...</p>
+          </div>
+
+          <div class="block-title">Navegación a otras páginas:</div>
+          <div class="list">
+            <ul>
+              <li>
+                <a href="/acerca/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Acerca de mí</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/form/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Formulario</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="block-title">Modales</div>
+          <div class="block block-strong">
+            <div class="row">
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Modal Popup</a>
+              </div>
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Modal Login</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-title">Paneles</div>
+          <div class="block block-strong">
+            <div class="row">
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Abrir Panel Izquierdo</a>
+              </div>
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Abrir Panel Derecho</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-title searchbar-hide-on-search">Documentación Loaders & Router</div>
+          <div class="list links-list searchbar-hide-on-search">
+            <ul>
+              <li>
+                <a href="/page-loader-template7/henry/1110517520/acerca-de-mi/1/?start=0&end=30#top">PageLoader Template7 Page</a>
+              </li>
+              <li>
+                <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page AVANZADO</a>
+              </li>
+              <li>
+                <a href="/alguna-ruta-inexistente/">Defecto ruta no existente(Error 404)</a>
+              </li>
+              <li>
+                <a href="/request-and-load/user/123456/">Request AJAX Data & Load</a>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- </ .page-content -->
+
+      </div><!-- </ .page-->
+
+    </div><!-- </ .view-->
+
+    <!-- Modal Popup "oculto" -->
+    <div class="popup" id="my-popup">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Ejemplo Popup</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Cerrar</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">
+              <p>Contenido de Popup aquí</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Login "oculto" -->
+    <div class="login-screen" id="my-login-screen">
+      <div class="view">
+        <div class="page">
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">Inicio de Sesón</div>
+            <div class="list">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Usuario</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="username" placeholder="Digite su usuario">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Contraseña</div>
+                    <div class="item-input-wrap">
+                      <input type="password" name="password" placeholder="Digite su contraseña">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="list">
+              <ul>
+                <li>
+                  <a href="#" class="item-link list-button login-button">Ingresar</a>
+                </li>
+              </ul>
+              <div class="block-footer">Haga clic en "Ingresar" para cerrar el modal Login, mostrará un alert con los datos digitados...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- </ .login-screen -->
+
+  </div><!-- </ DIV root #app-->
+
+  <!-- Solo cuando se compila Cordova -->
+  <script src="cordova.js"></script>
+
+  <!-- Framework7 library -->
+  <script src="framework7/js/framework7.min.js"></script>
+
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+
+  <!-- Inicializar app F7 y Cordova -->
+  <script src="js/app.js"></script>
+</body>
+</html>
